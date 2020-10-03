@@ -232,6 +232,7 @@ const Chat = ({ connection, updateConnection, channel, updateChannel }) => {
       messagesRef.current = userMessages;
       setMessages(userMessages);
     }
+    console.log('data', text)
     channel.send(JSON.stringify(text));
     setMessage("");
   };
@@ -326,10 +327,10 @@ const Chat = ({ connection, updateConnection, channel, updateChannel }) => {
                   </Button>
                 </Input>
               )) || (
-                <Segment raised textAlign="center" color="olive">
-                  Logged In as: {name}
-                </Segment>
-              )}
+                  <Segment raised textAlign="center" color="olive">
+                    Logged In as: {name}
+                  </Segment>
+                )}
             </Grid.Column>
           </Grid>
           <Grid>
@@ -350,10 +351,10 @@ const Chat = ({ connection, updateConnection, channel, updateChannel }) => {
           </Grid>
         </Fragment>
       )) || (
-        <Loader size="massive" active inline="centered">
-          Loading
-        </Loader>
-      )}
+          <Loader size="massive" active inline="centered">
+            Loading
+          </Loader>
+        )}
     </div>
   );
 };
